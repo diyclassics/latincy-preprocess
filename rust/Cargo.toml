@@ -1,0 +1,25 @@
+[package]
+name = "latincy-preprocess"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "latincy_preprocess"
+crate-type = ["cdylib", "rlib"]
+path = "src/lib.rs"
+
+[features]
+default = []
+pyo3-backend = ["dep:pyo3"]
+cli = ["dep:clap", "dep:rayon", "dep:glob"]
+
+[dependencies]
+pyo3 = { version = "0.23", features = ["extension-module"], optional = true }
+serde_json = "1"
+clap = { version = "4", features = ["derive"], optional = true }
+rayon = { version = "1.10", optional = true }
+glob = { version = "0.3", optional = true }
+
+[profile.release]
+opt-level = 3
+lto = true

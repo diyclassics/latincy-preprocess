@@ -1,0 +1,65 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "latincy-preprocess"
+version = "0.1.0"
+description = "Latin text preprocessing: U/V normalization, long-s correction, and more"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    {name = "Patrick Burns", email = "patrick@diyclassics.org"}
+]
+keywords = ["latin", "nlp", "normalization", "philology", "text-processing", "ocr"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+    "Topic :: Text Processing :: Linguistic",
+    "Natural Language :: Latin",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+spacy = ["spacy>=3.5.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-benchmark>=4.0",
+    "ruff>=0.1.0",
+]
+
+[project.entry-points."spacy_factories"]
+latin_preprocessor = "latincy_preprocess.spacy:create_latin_preprocessor"
+uv_normalizer = "latincy_preprocess.spacy:create_uv_normalizer"
+long_s_normalizer = "latincy_preprocess.spacy:create_long_s_normalizer"
+
+[project.urls]
+Homepage = "https://github.com/diyclassics/latincy-preprocess"
+Repository = "https://github.com/diyclassics/latincy-preprocess"
+
+[tool.maturin]
+python-source = "src"
+manifest-path = "rust/Cargo.toml"
+module-name = "latincy_preprocess._rust"
+features = ["pyo3/extension-module", "pyo3-backend"]
+include = ["LICENSE"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

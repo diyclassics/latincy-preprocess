@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+*.dylib
+
+# Virtual environments
+.venv/
+venv/
+
+# Rust
+target/
+Cargo.lock
+
+# Testing
+.pytest_cache/
+.benchmarks/
+htmlcov/
+.coverage
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data artifacts (raw corpora, model checkpoints)
+data/
+training/diacritics/checkpoints/
+training/diacritics/data/
+
+# Draft docs
+docs/
+
+# Claude
+.claude/settings.local.json
+.claude/

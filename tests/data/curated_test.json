@@ -1,0 +1,722 @@
+{
+  "metadata": {
+    "description": "Curated test cases for U/V normalization rules",
+    "version": "1.0.0",
+    "total_cases": 100,
+    "categories": [
+      "qu_digraph",
+      "gu_ngu_digraph",
+      "word_exceptions",
+      "perfect_tense",
+      "double_u",
+      "initial_position",
+      "intervocalic",
+      "before_consonant",
+      "word_final",
+      "post_consonant",
+      "mixed_complex"
+    ]
+  },
+  "test_cases": [
+    {
+      "id": 1,
+      "category": "qu_digraph",
+      "input": "quod",
+      "expected": "quod",
+      "description": "qu digraph preserved"
+    },
+    {
+      "id": 2,
+      "category": "qu_digraph",
+      "input": "aqua",
+      "expected": "aqua",
+      "description": "qu digraph in middle of word"
+    },
+    {
+      "id": 3,
+      "category": "qu_digraph",
+      "input": "quid",
+      "expected": "quid",
+      "description": "qu followed by i"
+    },
+    {
+      "id": 4,
+      "category": "qu_digraph",
+      "input": "quae",
+      "expected": "quae",
+      "description": "qu followed by ae"
+    },
+    {
+      "id": 5,
+      "category": "qu_digraph",
+      "input": "quinque",
+      "expected": "quinque",
+      "description": "multiple qu patterns"
+    },
+    {
+      "id": 6,
+      "category": "qu_digraph",
+      "input": "loquor",
+      "expected": "loquor",
+      "description": "qu after consonant cluster"
+    },
+    {
+      "id": 7,
+      "category": "qu_digraph",
+      "input": "sequitur",
+      "expected": "sequitur",
+      "description": "qu in verb form"
+    },
+    {
+      "id": 8,
+      "category": "qu_digraph",
+      "input": "antiquus",
+      "expected": "antiquus",
+      "description": "qu followed by vowel-u"
+    },
+    {
+      "id": 9,
+      "category": "gu_ngu_digraph",
+      "input": "lingua",
+      "expected": "lingua",
+      "description": "ngu digraph"
+    },
+    {
+      "id": 10,
+      "category": "gu_ngu_digraph",
+      "input": "sanguis",
+      "expected": "sanguis",
+      "description": "ngu in middle"
+    },
+    {
+      "id": 11,
+      "category": "gu_ngu_digraph",
+      "input": "pinguis",
+      "expected": "pinguis",
+      "description": "ngu adjective"
+    },
+    {
+      "id": 12,
+      "category": "gu_ngu_digraph",
+      "input": "unguis",
+      "expected": "unguis",
+      "description": "ngu initial"
+    },
+    {
+      "id": 13,
+      "category": "word_exceptions",
+      "input": "cui",
+      "expected": "cui",
+      "description": "dative relative/interrogative"
+    },
+    {
+      "id": 14,
+      "category": "word_exceptions",
+      "input": "cuius",
+      "expected": "cuius",
+      "description": "genitive relative/interrogative"
+    },
+    {
+      "id": 15,
+      "category": "word_exceptions",
+      "input": "huic",
+      "expected": "huic",
+      "description": "dative demonstrative"
+    },
+    {
+      "id": 16,
+      "category": "word_exceptions",
+      "input": "sua",
+      "expected": "sua",
+      "description": "possessive pronoun fem."
+    },
+    {
+      "id": 17,
+      "category": "word_exceptions",
+      "input": "tua",
+      "expected": "tua",
+      "description": "possessive pronoun 2nd fem."
+    },
+    {
+      "id": 18,
+      "category": "word_exceptions",
+      "input": "suum",
+      "expected": "suum",
+      "description": "possessive pronoun neut."
+    },
+    {
+      "id": 19,
+      "category": "word_exceptions",
+      "input": "duo",
+      "expected": "duo",
+      "description": "numeral two"
+    },
+    {
+      "id": 20,
+      "category": "word_exceptions",
+      "input": "perpetuum",
+      "expected": "perpetuum",
+      "description": "-uus adjective neut."
+    },
+    {
+      "id": 21,
+      "category": "word_exceptions",
+      "input": "continuo",
+      "expected": "continuo",
+      "description": "-uus adjective abl."
+    },
+    {
+      "id": 22,
+      "category": "word_exceptions",
+      "input": "eius",
+      "expected": "eius",
+      "description": "genitive of is"
+    },
+    {
+      "id": 23,
+      "category": "perfect_tense",
+      "input": "fuit",
+      "expected": "fuit",
+      "description": "u-perfect 3sg sum"
+    },
+    {
+      "id": 24,
+      "category": "perfect_tense",
+      "input": "fui",
+      "expected": "fui",
+      "description": "u-perfect 1sg sum"
+    },
+    {
+      "id": 25,
+      "category": "perfect_tense",
+      "input": "potuit",
+      "expected": "potuit",
+      "description": "u-perfect 3sg possum"
+    },
+    {
+      "id": 26,
+      "category": "perfect_tense",
+      "input": "tenuit",
+      "expected": "tenuit",
+      "description": "u-perfect 3sg teneo"
+    },
+    {
+      "id": 27,
+      "category": "perfect_tense",
+      "input": "habuit",
+      "expected": "habuit",
+      "description": "u-perfect 3sg habeo"
+    },
+    {
+      "id": 28,
+      "category": "perfect_tense",
+      "input": "docuit",
+      "expected": "docuit",
+      "description": "u-perfect 3sg doceo"
+    },
+    {
+      "id": 29,
+      "category": "perfect_tense",
+      "input": "fuisse",
+      "expected": "fuisse",
+      "description": "u-perfect infinitive"
+    },
+    {
+      "id": 30,
+      "category": "perfect_tense",
+      "input": "potuisse",
+      "expected": "potuisse",
+      "description": "u-perfect infinitive possum"
+    },
+    {
+      "id": 31,
+      "category": "perfect_tense",
+      "input": "fuerat",
+      "expected": "fuerat",
+      "description": "pluperfect sum"
+    },
+    {
+      "id": 32,
+      "category": "perfect_tense",
+      "input": "fuere",
+      "expected": "fuere",
+      "description": "syncopated perfect 3pl"
+    },
+    {
+      "id": 33,
+      "category": "perfect_tense",
+      "input": "potuere",
+      "expected": "potuere",
+      "description": "syncopated perfect possum"
+    },
+    {
+      "id": 34,
+      "category": "perfect_tense",
+      "input": "voluit",
+      "expected": "voluit",
+      "description": "volo perfect (special l-stem)"
+    },
+    {
+      "id": 35,
+      "category": "perfect_tense",
+      "input": "noluit",
+      "expected": "noluit",
+      "description": "nolo perfect (special l-stem)"
+    },
+    {
+      "id": 36,
+      "category": "perfect_tense",
+      "input": "soluit",
+      "expected": "solvit",
+      "description": "solvo perfect (v-perfect, not volo)"
+    },
+    {
+      "id": 37,
+      "category": "double_u",
+      "input": "seruus",
+      "expected": "servus",
+      "description": "V-C-uu pattern: first v, second u"
+    },
+    {
+      "id": 38,
+      "category": "double_u",
+      "input": "fluuius",
+      "expected": "fluvius",
+      "description": "C-C-uu pattern: first u, second v"
+    },
+    {
+      "id": 39,
+      "category": "double_u",
+      "input": "nouus",
+      "expected": "novus",
+      "description": "V-uu pattern: first v, second u"
+    },
+    {
+      "id": 40,
+      "category": "double_u",
+      "input": "iuuat",
+      "expected": "iuvat",
+      "description": "initial i-uu: first u, second v"
+    },
+    {
+      "id": 41,
+      "category": "double_u",
+      "input": "uiuum",
+      "expected": "vivum",
+      "description": "initial v-uu pattern"
+    },
+    {
+      "id": 42,
+      "category": "double_u",
+      "input": "paruus",
+      "expected": "parvus",
+      "description": "V-C-uu with r"
+    },
+    {
+      "id": 43,
+      "category": "double_u",
+      "input": "uulgus",
+      "expected": "vulgus",
+      "description": "initial v + u before consonant"
+    },
+    {
+      "id": 44,
+      "category": "initial_position",
+      "input": "uia",
+      "expected": "via",
+      "description": "initial before vowel"
+    },
+    {
+      "id": 45,
+      "category": "initial_position",
+      "input": "uir",
+      "expected": "vir",
+      "description": "initial before i-vowel"
+    },
+    {
+      "id": 46,
+      "category": "initial_position",
+      "input": "uox",
+      "expected": "vox",
+      "description": "initial before o"
+    },
+    {
+      "id": 47,
+      "category": "initial_position",
+      "input": "uinum",
+      "expected": "vinum",
+      "description": "initial before i"
+    },
+    {
+      "id": 48,
+      "category": "initial_position",
+      "input": "uerus",
+      "expected": "verus",
+      "description": "initial before e"
+    },
+    {
+      "id": 49,
+      "category": "initial_position",
+      "input": "urbs",
+      "expected": "urbs",
+      "description": "initial before consonant"
+    },
+    {
+      "id": 50,
+      "category": "initial_position",
+      "input": "usus",
+      "expected": "usus",
+      "description": "initial u before s"
+    },
+    {
+      "id": 51,
+      "category": "initial_position",
+      "input": "unda",
+      "expected": "unda",
+      "description": "initial u before n"
+    },
+    {
+      "id": 52,
+      "category": "initial_position",
+      "input": "unus",
+      "expected": "unus",
+      "description": "initial u before consonant n"
+    },
+    {
+      "id": 53,
+      "category": "initial_position",
+      "input": "Veni",
+      "expected": "Veni",
+      "description": "initial capital V before vowel (preserved)"
+    },
+    {
+      "id": 54,
+      "category": "intervocalic",
+      "input": "nouo",
+      "expected": "novo",
+      "description": "intervocalic v"
+    },
+    {
+      "id": 55,
+      "category": "intervocalic",
+      "input": "breuis",
+      "expected": "brevis",
+      "description": "intervocalic in adjective"
+    },
+    {
+      "id": 56,
+      "category": "intervocalic",
+      "input": "auis",
+      "expected": "avis",
+      "description": "intervocalic a-u-i"
+    },
+    {
+      "id": 57,
+      "category": "intervocalic",
+      "input": "caueo",
+      "expected": "caveo",
+      "description": "intervocalic in verb"
+    },
+    {
+      "id": 58,
+      "category": "intervocalic",
+      "input": "moueo",
+      "expected": "moveo",
+      "description": "intervocalic moveo"
+    },
+    {
+      "id": 59,
+      "category": "intervocalic",
+      "input": "iuuenis",
+      "expected": "iuvenis",
+      "description": "intervocalic after initial i"
+    },
+    {
+      "id": 60,
+      "category": "before_consonant",
+      "input": "scriptum",
+      "expected": "scriptum",
+      "description": "u before pt cluster"
+    },
+    {
+      "id": 61,
+      "category": "before_consonant",
+      "input": "Augustus",
+      "expected": "Augustus",
+      "description": "u before g"
+    },
+    {
+      "id": 62,
+      "category": "before_consonant",
+      "input": "causa",
+      "expected": "causa",
+      "description": "u before s"
+    },
+    {
+      "id": 63,
+      "category": "before_consonant",
+      "input": "aurum",
+      "expected": "aurum",
+      "description": "u before r"
+    },
+    {
+      "id": 64,
+      "category": "before_consonant",
+      "input": "laudat",
+      "expected": "laudat",
+      "description": "u before d"
+    },
+    {
+      "id": 65,
+      "category": "before_consonant",
+      "input": "pauper",
+      "expected": "pauper",
+      "description": "u before p"
+    },
+    {
+      "id": 66,
+      "category": "word_final",
+      "input": "tu",
+      "expected": "tu",
+      "description": "word-final pronoun"
+    },
+    {
+      "id": 67,
+      "category": "word_final",
+      "input": "cum",
+      "expected": "cum",
+      "description": "word-final preposition"
+    },
+    {
+      "id": 68,
+      "category": "word_final",
+      "input": "dum",
+      "expected": "dum",
+      "description": "word-final conjunction"
+    },
+    {
+      "id": 69,
+      "category": "word_final",
+      "input": "sum",
+      "expected": "sum",
+      "description": "word-final verb"
+    },
+    {
+      "id": 70,
+      "category": "word_final",
+      "input": "iam",
+      "expected": "iam",
+      "description": "no u - control case"
+    },
+    {
+      "id": 71,
+      "category": "post_consonant",
+      "input": "silua",
+      "expected": "silva",
+      "description": "post-l before vowel"
+    },
+    {
+      "id": 72,
+      "category": "post_consonant",
+      "input": "seruo",
+      "expected": "servo",
+      "description": "post-r before vowel"
+    },
+    {
+      "id": 73,
+      "category": "post_consonant",
+      "input": "soluo",
+      "expected": "solvo",
+      "description": "post-l before vowel verb"
+    },
+    {
+      "id": 74,
+      "category": "post_consonant",
+      "input": "uultus",
+      "expected": "vultus",
+      "description": "initial v, then u before lt"
+    },
+    {
+      "id": 75,
+      "category": "post_consonant",
+      "input": "cultus",
+      "expected": "cultus",
+      "description": "u before lt cluster"
+    },
+    {
+      "id": 76,
+      "category": "mixed_complex",
+      "input": "Arma uirumque cano",
+      "expected": "Arma virumque cano",
+      "description": "Aeneid opening - multiple patterns"
+    },
+    {
+      "id": 77,
+      "category": "mixed_complex",
+      "input": "Veni, uidi, uici",
+      "expected": "Veni, vidi, vici",
+      "description": "Caesar's quote"
+    },
+    {
+      "id": 78,
+      "category": "mixed_complex",
+      "input": "Gallia est omnis diuisa",
+      "expected": "Gallia est omnis divisa",
+      "description": "Caesar DBG opening"
+    },
+    {
+      "id": 79,
+      "category": "mixed_complex",
+      "input": "in aqua uiuit",
+      "expected": "in aqua vivit",
+      "description": "qu + intervocalic"
+    },
+    {
+      "id": 80,
+      "category": "mixed_complex",
+      "input": "seruus bonus fuit",
+      "expected": "servus bonus fuit",
+      "description": "double-u + perfect"
+    },
+    {
+      "id": 81,
+      "category": "mixed_complex",
+      "input": "Quid uis?",
+      "expected": "Quid vis?",
+      "description": "qu + initial v"
+    },
+    {
+      "id": 82,
+      "category": "mixed_complex",
+      "input": "uirtus et ueritas",
+      "expected": "virtus et veritas",
+      "description": "multiple initial v"
+    },
+    {
+      "id": 83,
+      "category": "mixed_complex",
+      "input": "nouam uitam",
+      "expected": "novam vitam",
+      "description": "intervocalic + initial"
+    },
+    {
+      "id": 84,
+      "category": "mixed_complex",
+      "input": "populus Romanus uicit",
+      "expected": "populus Romanus vicit",
+      "description": "u before consonant + initial v"
+    },
+    {
+      "id": 85,
+      "category": "mixed_complex",
+      "input": "cui uitam dedit",
+      "expected": "cui vitam dedit",
+      "description": "word exception + initial v"
+    },
+    {
+      "id": 86,
+      "category": "mixed_complex",
+      "input": "fluuius magnus fluxit",
+      "expected": "fluvius magnus fluxit",
+      "description": "double-u + u before x"
+    },
+    {
+      "id": 87,
+      "category": "mixed_complex",
+      "input": "iuuenes uenerunt",
+      "expected": "iuvenes venerunt",
+      "description": "initial i-uv + initial v"
+    },
+    {
+      "id": 88,
+      "category": "mixed_complex",
+      "input": "lingua Latina",
+      "expected": "lingua Latina",
+      "description": "ngu digraph control"
+    },
+    {
+      "id": 89,
+      "category": "mixed_complex",
+      "input": "Augustus imperauit",
+      "expected": "Augustus imperavit",
+      "description": "u before g + intervocalic"
+    },
+    {
+      "id": 90,
+      "category": "mixed_complex",
+      "input": "suus cuique",
+      "expected": "suus cuique",
+      "description": "word exceptions combined"
+    },
+    {
+      "id": 91,
+      "category": "mixed_complex",
+      "input": "equus currit",
+      "expected": "equus currit",
+      "description": "qu + double u"
+    },
+    {
+      "id": 92,
+      "category": "mixed_complex",
+      "input": "Vergilius scripsit",
+      "expected": "Vergilius scripsit",
+      "description": "name with V preserved"
+    },
+    {
+      "id": 93,
+      "category": "mixed_complex",
+      "input": "SENATVS POPVLVSQVE ROMANVS",
+      "expected": "SENATUS POPULUSQUE ROMANUS",
+      "description": "SPQR - uppercase"
+    },
+    {
+      "id": 94,
+      "category": "mixed_complex",
+      "input": "diues pauper",
+      "expected": "dives pauper",
+      "description": "intervocalic + before consonant"
+    },
+    {
+      "id": 95,
+      "category": "mixed_complex",
+      "input": "nauis in portu",
+      "expected": "navis in portu",
+      "description": "intervocalic + word final"
+    },
+    {
+      "id": 96,
+      "category": "mixed_complex",
+      "input": "uox populi",
+      "expected": "vox populi",
+      "description": "initial v + before x"
+    },
+    {
+      "id": 97,
+      "category": "mixed_complex",
+      "input": "uita breuis est",
+      "expected": "vita brevis est",
+      "description": "initial v + intervocalic"
+    },
+    {
+      "id": 98,
+      "category": "mixed_complex",
+      "input": "Caesar uenit uidit uicit",
+      "expected": "Caesar venit vidit vicit",
+      "description": "triple initial v"
+    },
+    {
+      "id": 99,
+      "category": "mixed_complex",
+      "input": "per aquam et ignem",
+      "expected": "per aquam et ignem",
+      "description": "qu control - no u/v changes"
+    },
+    {
+      "id": 100,
+      "category": "mixed_complex",
+      "input": "Liuius et Tacitus scripserunt",
+      "expected": "Livius et Tacitus scripserunt",
+      "description": "author name intervocalic"
+    }
+  ]
+}
