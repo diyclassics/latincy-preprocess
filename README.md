@@ -37,7 +37,7 @@ normalize_uv("Arma uirumque cano")
 # 'Arma virumque cano'
 ```
 
-Rules handle digraphs (*qu*, *ngu*), morphological exceptions (*cui*, *fuit*), positional context (initial, intervocalic, post-consonant), and case preservation.
+Rules handle digraphs (*qu*), trigraphs (*ngu*), morphological exceptions (*cui*, *fuit*), positional context (initial, intervocalic, post-consonant), and case preservation.
 
 ### Long-S OCR Correction
 
