@@ -2,7 +2,7 @@
 Character set definitions and diacritic stripping for Ancient Greek.
 
 Provides:
-- strip_diacritics(): remove all Greek diacritics, lowercase
+- strip_diacritics(): remove all Greek diacritics, preserving case
 - CharsetMap: bidirectional char↔index mapping with save/load
 - build_charset(): scan corpus to build complete mappings
 - Per-character diacritic class definitions
@@ -48,7 +48,7 @@ _COMBINING_MARKS = {
 
 def strip_diacritics(text: str) -> str:
     """
-    Remove all Greek diacritics and lowercase the text.
+    Remove all Greek diacritics from text, preserving case.
 
     Decomposes polytonic characters to base + combining marks, removes
     the combining marks, then recomposes. Non-Greek characters pass through.
@@ -57,9 +57,8 @@ def strip_diacritics(text: str) -> str:
         text: Greek text (possibly with polytonic diacritics)
 
     Returns:
-        Stripped, lowercased text with only base Greek letters
+        Text with diacritics removed, original case preserved
     """
-    text = text.lower()
     # Decompose to NFD (base char + combining marks)
     decomposed = unicodedata.normalize("NFD", text)
     # Remove all combining marks used in Greek

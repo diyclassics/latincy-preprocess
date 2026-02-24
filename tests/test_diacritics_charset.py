@@ -56,12 +56,11 @@ class TestStripDiacritics:
     def test_already_stripped(self):
         assert strip_diacritics("λογος") == "λογος"
 
-    def test_lowercase(self):
-        # Python's .lower() converts final Σ to ς
-        assert strip_diacritics("ΛΟΓΟΣ") == "λογος"
+    def test_uppercase_preserved(self):
+        assert strip_diacritics("ΛΟΓΟΣ") == "ΛΟΓΟΣ"
 
-    def test_mixed_case(self):
-        assert strip_diacritics("Ἀθῆναι") == "αθηναι"
+    def test_mixed_case_preserved(self):
+        assert strip_diacritics("Ἀθῆναι") == "Αθηναι"
 
     def test_empty_string(self):
         assert strip_diacritics("") == ""
