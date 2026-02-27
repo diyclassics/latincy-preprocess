@@ -281,6 +281,49 @@ class TestWordFinal:
         assert normalizer.normalize(input_text) == expected
 
 
+class TestInitialCuCluster:
+    """Word-initial C+u is always vocalic — no Latin word starts with Cv."""
+
+    @pytest.mark.parametrize(
+        "input_text,expected",
+        [
+            ("puer", "puer"),
+            ("puerum", "puerum"),
+            ("puella", "puella"),
+            ("cura", "cura"),
+            ("cupido", "cupido"),
+            ("tuba", "tuba"),
+            ("duco", "duco"),
+            ("fuga", "fuga"),
+            ("murus", "murus"),
+            ("bulla", "bulla"),
+            ("super", "super"),
+            ("Puer", "Puer"),
+            ("PUER", "PUER"),
+        ],
+    )
+    def test_initial_cu_stays_vocalic(self, normalizer, input_text, expected):
+        assert normalizer.normalize(input_text) == expected
+
+    @pytest.mark.parametrize(
+        "input_text,expected",
+        [
+            # Mid-word compounds: C+v at morpheme boundary should still get v
+            ("subuenio", "subvenio"),
+            ("aduenio", "advenio"),
+            ("obuenio", "obvenio"),
+        ],
+    )
+    def test_midword_compound_still_gets_v(self, normalizer, input_text, expected):
+        assert normalizer.normalize(input_text) == expected
+
+    def test_initial_cu_in_sentence(self, normalizer):
+        assert normalizer.normalize("puerum timebat") == "puerum timebat"
+
+    def test_initial_cu_after_punctuation(self, normalizer):
+        assert normalizer.normalize("dixit: puer bonus est") == "dixit: puer bonus est"
+
+
 class TestPostConsonant:
     @pytest.mark.parametrize(
         "input_text,expected",

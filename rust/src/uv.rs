@@ -396,8 +396,14 @@ fn classify_uv(chars: &[char], idx: usize) -> (char, &'static str) {
     }
 
     // Rule 10: After consonant before vowel → 'v' (with vocalic stem exception)
+    // EXCEPTION: word-initial Cv is always vocalic (no Latin word starts
+    //   with a stop/fricative + consonantal v: puer, cura, tuba, duco, etc.)
     if let (Some(p), Some(n1)) = (prev, next1) {
         if is_consonant(p) && is_vowel(n1) {
+            // Word-initial C+u → always vocalic u
+            if idx >= 1 && is_word_boundary(chars, idx - 1) {
+                return ('u', "initial_cu_cluster");
+            }
             let word_lower = word.to_lowercase();
             for stem in VOCALIC_U_STEMS {
                 if word_lower.contains(stem) {

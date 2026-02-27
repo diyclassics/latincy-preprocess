@@ -481,9 +481,15 @@ def _classify_uv(text: str, idx: int) -> tuple[str, str]:
     # Rule 10: After consonant before vowel → 'v'
     # Examples: silva, servo, solvo
     # EXCEPTION: suad-, suav- stems have vocalic u (persuade, suavis)
+    # EXCEPTION: word-initial Cv is always vocalic (no Latin word starts
+    #   with a stop/fricative + consonantal v: puer, cura, tuba, duco, etc.)
     # =========================================================================
     if prev and _is_consonant(prev):
         if next1 and _is_vowel(next1):
+            # Word-initial C+u → always vocalic u
+            # No Latin word starts with Cv (pv-, bv-, tv-, dv-, cv-, etc.)
+            if _is_word_boundary(text, idx - 1):
+                return ("u", "initial_cu_cluster")
             # Check for vocalic u stems (suad-, suav-)
             # Extract the word and check if it contains a vocalic stem pattern
             word_lower = word.lower()
