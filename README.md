@@ -134,13 +134,7 @@ Pass 1 rules have a 0.00% false positive rate. Pass 2 disambiguation uses a prot
 
 ## Changelog
 
-### 0.1.1
-
-- **Fix:** `strip_diacritics()` no longer lowercases text — now preserves original case. Lowercasing was an unintended side effect conflating two separate operations.
-
-### 0.1.0
-
-- Initial release: U/V normalization, long-s OCR correction, diacritics stripping, macron removal, spaCy integration, optional Rust backend.
+See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## Citation
 
